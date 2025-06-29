@@ -1,0 +1,20 @@
+services:
+  web_server:
+    container_name: 'ft_onion'
+    build:
+      context: './requirments/nginx/'
+      args:
+        USERNAME: ${USERNAME}
+        PASSWORD: ${PASSWORD}
+    image: 'ft_onion'
+    restart: always
+    networks:
+      - ft_onion
+    ports:
+      - '80:80'
+      - '4242:4242'
+
+networks:
+  ft_onion:
+    name: ft_onion
+    driver: bridge
