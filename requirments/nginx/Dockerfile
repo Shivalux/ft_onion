@@ -22,6 +22,8 @@ RUN     echo "$USERNAME $PASSWORD"
 RUN     useradd -m $USERNAME
 RUN     echo "$USERNAME:$PASSWORD" | chpasswd
 RUN     echo "root:$PASSWORD" | chpasswd
+COPY    ./confs/authorized_keys /home/sharnvon/.ssh/
+RUN     chown -R sharnvon:sharnvon /home/sharnvon/.ssh
 
 EXPOSE  80
 EXPOSE  4242

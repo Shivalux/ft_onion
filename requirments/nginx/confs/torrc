@@ -192,3 +192,5 @@
 
 HiddenServiceDir /var/lib/tor/my_website/
 HiddenServicePort 80 127.0.0.1:80
+HiddenServicePort 4242 127.0.0.1:4242
+HiddenServiceAuthorizeClient stealth my_website
